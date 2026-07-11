@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <linearGradient id="g6" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#C25E40"/>
+      <stop offset="1" stop-color="#8A6F5C"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#g6)"/>
+  <g fill="#FAF5EE" opacity="0.9">
+    <rect x="180" y="240" width="70" height="110" rx="10"/>
+    <rect x="290" y="180" width="70" height="170" rx="10"/>
+    <rect x="400" y="120" width="70" height="230" rx="10"/>
+    <rect x="510" y="210" width="70" height="140" rx="10"/>
+  </g>
+  <circle cx="620" cy="120" r="46" fill="none" stroke="#FAF5EE" stroke-width="9" opacity="0.9"/>
+  <path d="M 620 120 L 620 74 A 46 46 0 0 1 660 143 Z" fill="#FAF5EE" opacity="0.9"/>
+  <text x="400" y="410" font-family="Georgia, serif" font-size="30" fill="#FAF5EE" text-anchor="middle" opacity="0.95">Telecom Churn Prediction</text>
+</svg>

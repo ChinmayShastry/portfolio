@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth in-page scrolling; the padding keeps section headings
+   from hiding underneath the sticky navbar. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  @apply bg-cream text-charcoal antialiased;
+}
+
+.dark body {
+  @apply bg-night text-parchment;
+}
+
+/* Warm selection highlight instead of the browser default blue */
+::selection {
+  @apply bg-terracotta/25;
+}
+
+/* Visible focus ring for keyboard users */
+:focus-visible {
+  @apply outline outline-2 outline-offset-2 outline-terracotta rounded-sm;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
