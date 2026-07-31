@@ -57,6 +57,10 @@ export const profile = {
   location: "Bengaluru, India",
   email: "chinmay.v.shastry@gmail.com",
 
+  // Small pulsing badge at the top of the hero.
+  // Set to "" to hide it (e.g. once you're no longer job-hunting).
+  availability: "Open to AI engineering roles",
+
   // The typing/rotating tagline in the hero — add or remove freely
   roles: [
     "AI Engineer",
@@ -184,6 +188,9 @@ export const toolbelt = [
  * ──────────────────────────────────────────────── */
 export const projects = [
   {
+    // `featured: true` adds a small "Featured" badge on the card.
+    // Use it on your one or two strongest projects.
+    featured: true,
     title: "AI Finance Research Assistant",
     description:
       "AI-powered research assistant for Nifty 250 stocks and commodities — real-time Yahoo Finance + NewsAPI pipelines, GPT-4o-mini analysis, sentiment scoring, and interactive Plotly dashboards.",
@@ -194,6 +201,7 @@ export const projects = [
     sourceUrl: "https://github.com/ChinmayShastry/ai-finance-research-assistant",
   },
   {
+    featured: true,
     title: "DocChat AI — Hybrid RAG",
     description:
       "Document intelligence with BM25 + semantic search + CrossEncoder reranking. Improved RAGAS context precision from ~78% to 100%, with multi-document support and streaming answers.",

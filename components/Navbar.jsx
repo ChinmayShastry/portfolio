@@ -8,18 +8,60 @@ import ThemeToggle from "@/components/ThemeToggle";
 
 /**
  * Navbar — sticky, minimal. Gains a soft blur + shadow once the page
- * is scrolled. Collapses to a hamburger menu on mobile.
+ * is scrolled, and highlights whichever section you're currently
+ * reading. Collapses to a hamburger menu on mobile.
  */
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeId, setActiveId] = useState("");
 
+  // Track scroll position for both the navbar background and the
+  // "which section am I in?" highlight (a lightweight scroll-spy).
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
+    const ids = navLinks.map((link) => link.href.replace("#", ""));
+
+    const onScroll = () => {
+      setScrolled(window.scrollY > 16);
+
+      // The section whose top has most recently passed the navbar wins.
+      const marker = window.scrollY + 140;
+      let current = "";
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.offsetTop <= marker) current = id;
+      }
+
+      // Near the very bottom, force-select the last link — short final
+      // sections can otherwise never become "active".
+      const atBottom =
+        window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 80;
+      setActiveId(atBottom ? ids[ids.length - 1] : current);
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Close the mobile menu on Escape, and lock background scrolling
+  // while it's open.
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
 
   return (
     <header
@@ -44,15 +86,32 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden items-center gap-1 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="rounded-full px-4 py-2 text-sm font-medium text-cocoa transition-colors hover:bg-sand hover:text-charcoal dark:text-latte dark:hover:bg-espresso dark:hover:text-parchment"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeId === link.href.replace("#", "");
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "true" : undefined}
+                className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  isActive
+                    ? "text-terracotta dark:text-ember"
+                    : "text-cocoa hover:bg-sand hover:text-charcoal dark:text-latte dark:hover:bg-espresso dark:hover:text-parchment"
+                }`}
+              >
+                {link.label}
+                {/* Animated underline that slides between active links */}
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-active"
+                    aria-hidden="true"
+                    className="absolute inset-x-3 -bottom-0.5 h-0.5 rounded-full bg-terracotta dark:bg-ember"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </a>
+            );
+          })}
           <div className="ml-2">
             <ThemeToggle />
           </div>
@@ -86,16 +145,24 @@ export default function Navbar() {
             className="overflow-hidden border-t border-linen bg-cream/95 backdrop-blur-md md:hidden dark:border-bark dark:bg-night/95"
           >
             <div className="flex flex-col gap-1 px-5 py-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="rounded-xl px-4 py-3 text-base font-medium text-cocoa transition-colors hover:bg-sand hover:text-charcoal dark:text-latte dark:hover:bg-espresso dark:hover:text-parchment"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = activeId === link.href.replace("#", "");
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    aria-current={isActive ? "true" : undefined}
+                    className={`rounded-xl px-4 py-3 text-base font-medium transition-colors ${
+                      isActive
+                        ? "bg-terracotta/10 text-terracotta dark:bg-ember/10 dark:text-ember"
+                        : "text-cocoa hover:bg-sand hover:text-charcoal dark:text-latte dark:hover:bg-espresso dark:hover:text-parchment"
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
             </div>
           </motion.div>
         )}

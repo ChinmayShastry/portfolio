@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import CountUp from "@/components/CountUp";
 import { about, profile } from "@/data/content";
 
 /** About — photo, bio paragraphs, and a quick-facts stat grid. */
@@ -55,7 +56,7 @@ export default function About() {
                       {stat.label}
                     </dt>
                     <dd className="font-display text-3xl font-semibold text-terracotta dark:text-ember">
-                      {stat.value}
+                      <CountUp value={stat.value} />
                     </dd>
                   </div>
                 ))}

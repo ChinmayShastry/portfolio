@@ -19,10 +19,11 @@ Name, bio, roles, skills, projects, timeline, testimonials, social links, and SE
 | What | Where in `data/content.js` |
 | --- | --- |
 | Name, tagline roles, intro | `profile` |
+| Hero availability badge | `profile.availability` (set `""` to hide) |
 | SEO title / description / URL | `siteMeta` |
 | Bio paragraphs, photo, stats | `about` |
 | Skill cards + tool chips | `services`, `toolbelt` |
-| Project cards (links, tags, images) | `projects` |
+| Project cards (links, tags, images) | `projects` — add `featured: true` for a badge |
 | Work / education timeline | `timeline` |
 | Testimonial quotes | `testimonials` |
 | Email, socials, **Formspree ID** | `contact` |
@@ -43,6 +44,10 @@ That's it — submissions will arrive in your email inbox.
 - **Project screenshots** → drop 16:9 images (e.g. 1200×675) into `public/images/projects/` and update each project's `image` path
 - **Social share image** → drop a 1200×630 image at `public/images/og.png` and set `siteMeta.ogImage` to `"/images/og.png"`
 - **Résumé** → replace `public/Chinmay_Shastry_Resume.pdf` with the latest version (same filename, or update `profile.resumeUrl`)
+
+### ⚠️ Before you go live
+
+The three testimonials in `data/content.js` are **clearly-marked placeholders** ("Placeholder Name"). Either replace them with real quotes or set `testimonials = []` to hide the section — don't ship the placeholders.
 
 ### Changing colors or fonts
 
