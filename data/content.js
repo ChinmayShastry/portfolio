@@ -115,45 +115,6 @@ export const about = {
 };
 
 /* ────────────────────────────────────────────────
- *  Intro video
- *  ⚠️  The whole section stays hidden until `src` is filled in,
- *  so you can leave this alone until your video is recorded.
- *
- *  TWO WAYS TO USE IT — pick with `type`:
- *
- *  1. type: "local"  (recommended — no third parties, no tracking)
- *       • Compress to ~15–25 MB, then drop it at public/media/intro.mp4
- *       • src: "/media/intro.mp4"
- *       • See the README for the exact ffmpeg command to compress it.
- *
- *  2. type: "youtube"  (use if your file is over ~40 MB)
- *       • Upload to YouTube as **Unlisted**
- *       • src: just the 11-character video ID, e.g. "dQw4w9WgXcQ"
- *       • Nothing loads from YouTube until the visitor clicks play,
- *         and it uses the no-cookie domain — so no tracking on arrival.
- * ──────────────────────────────────────────────── */
-export const introVideo = {
-  type: "local", // "local" | "youtube"
-
-  // TODO: fill this in to switch the section on
-  src: "",
-
-  // Still frame shown before playback. Defaults to your headshot;
-  // a dedicated still from the video looks better if you have one.
-  poster: "/images/profile.jpg",
-
-  // TODO (recommended): captions file at public/media/intro.vtt.
-  // Many recruiters watch muted at their desk — captions matter.
-  captions: "",
-
-  eyebrow: "Say Hello",
-  title: "A quick introduction",
-  blurb:
-    "Ninety seconds on who I am, how I got from trading floors to transformer models, and the kind of problems I want to work on next.",
-  duration: "", // optional, e.g. "1:24" — shown next to the play button
-};
-
-/* ────────────────────────────────────────────────
  *  "What I Do" service cards
  *  icon: any icon imported from lucide-react at the top of this file
  * ──────────────────────────────────────────────── */
