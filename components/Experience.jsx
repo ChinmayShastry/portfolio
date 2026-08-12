@@ -26,7 +26,7 @@ export default function Experience() {
         <SectionHeading
           eyebrow="Journey"
           title="Experience & education"
-          description="From trading desks to training loops — the road so far."
+          description="How I got from managing portfolios to building AI systems."
         />
 
         <ol className="relative border-l-2 border-linen pl-8 dark:border-bark">

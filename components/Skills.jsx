@@ -34,8 +34,8 @@ export default function Skills() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="What I Do"
-          title="Skills that bridge two worlds"
-          description="Applied AI engineering and data work, grounded in five years of real financial-markets experience."
+          title="Where finance meets AI"
+          description="Applied AI and data work, with five years of financial-markets experience behind it."
         />
 
         {/* Service cards */}

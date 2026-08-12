@@ -13,8 +13,7 @@ export default function Footer() {
     <footer className="border-t border-linen px-5 py-10 sm:px-8 dark:border-bark">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
         <p className="text-sm text-cocoa dark:text-latte">
-          © {new Date().getFullYear()} {profile.name}. Built with Next.js &
-          a lot of chai.
+          © {new Date().getFullYear()} {profile.name}
         </p>
 
         <div className="flex items-center gap-5">

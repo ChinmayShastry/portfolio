@@ -74,7 +74,7 @@ export const profile = {
 
   // One-liner under the tagline
   intro:
-    "I build applied GenAI systems — hybrid RAG pipelines, agentic LLM workflows, and deep-learning models taken from prototype to live deployment. Five years reading financial markets taught me to ask what an answer is worth before asking how to model it.",
+    "I build RAG systems, LLM applications and machine-learning models, and I came to them after five years managing investment portfolios. Finance and AI is the intersection I want to keep working in.",
 
   // Résumé download link (file lives in /public). Set to "" to hide the button.
   resumeUrl: "/Chinmay_Shastry_Resume.pdf",
@@ -100,17 +100,18 @@ export const about = {
 
   // Each string renders as its own paragraph
   bio: [
-    "Hi, I'm Chinmay. I came to AI the long way round — five years managing equity and derivatives portfolios in Bengaluru, pricing risk and reading balance sheets for a book of 50+ clients. What pulled me across was realising I cared more about the patterns underneath the trades than the trades themselves.",
-    "So I retrained properly. In under two years I went from my first Python script to shipping production-style LLM applications — hybrid RAG systems, agentic tools, computer-vision models — most of them live and public. Picking up new frameworks quickly turned out to be the part that came naturally; the finance years gave me the sharper instinct for which problems are actually worth solving.",
-    "Today I work across the full span: GenAI engineering, machine learning, and the data analysis that underpins both. I'm still a relentless learner — currently deep in FastAPI, MCP, and system design — I still keep one eye on the markets, and I still think the best technical work is the kind you can explain to someone who doesn't share your vocabulary.",
+    "Hi, I'm Chinmay. I'm an AI engineer in Bengaluru, and before this I ran an independent financial practice for about five years.",
+    "That practice was built around portfolio management — equity and derivatives for a client base that grew past fifty. Around it I did what a small practice does: market consultation, teaching people how to actually place an order and set a stop loss, filing ITRs, advising on life insurance. Most of the job was explaining something complicated to someone with their own money on the line.",
+    "I moved into AI properly in 2025, through an offline engineering programme and then a year of project work. Since then I've built RAG pipelines, agentic tools and deep-learning models, three of which are live and public. What I'm after now is the overlap between the two: finance problems worth solving, solved with AI.",
+    "Outside of that I'm usually part-way through a course I said I'd finish — right now FastAPI, MCP and system design — and I still watch the markets out of habit.",
   ],
 
   // Quick facts / stats shown next to the bio
   stats: [
     { value: "5+", label: "Years in financial markets" },
-    { value: "10+", label: "AI/ML projects shipped" },
+    { value: "10+", label: "AI/ML projects built" },
     { value: "50+", label: "Clients advised" },
-    { value: "3", label: "Professional AI credentials" },
+    { value: "3", label: "AI programmes & certifications" },
   ],
 };
 
@@ -129,7 +130,7 @@ export const services = [
     icon: Database,
     title: "RAG & Retrieval Systems",
     description:
-      "Hybrid retrieval combining BM25, dense semantic search, and CrossEncoder reranking — measured with RAGAS, not guesswork.",
+      "Hybrid retrieval that combines BM25 with dense semantic search and CrossEncoder reranking. I use RAGAS scores to check the retrieval is actually improving.",
   },
   {
     icon: BrainCircuit,
@@ -141,7 +142,7 @@ export const services = [
     icon: BarChart3,
     title: "Data Analysis & Insight",
     description:
-      "Feature engineering, time-series and cohort analysis, and dashboards that answer the business question rather than just displaying the data.",
+      "Feature engineering, time-series work and cohort analysis, plus dashboards in Power BI and Tableau that are built to answer a question someone actually asked.",
   },
   {
     icon: Rocket,
@@ -151,9 +152,9 @@ export const services = [
   },
   {
     icon: CandlestickChart,
-    title: "Financial Domain Depth",
+    title: "Finance × AI",
     description:
-      "Equity markets, derivatives, valuation, and portfolio risk — genuine domain fluency, not a weekend spent reading about it.",
+      "Equity markets, derivatives and portfolio risk, learned over five years of managing real money for clients. It means I can read a finance problem before I start modelling it.",
   },
 ];
 
@@ -361,7 +362,7 @@ export const timeline = [
     period: "Oct 2025 — Jun 2026",
     location: "Bengaluru, India",
     description:
-      "Designed and deployed end-to-end ML pipelines across computer vision and NLP, delivering three production-style systems. Owned the full model lifecycle — preprocessing, feature engineering, training, tuning, evaluation — and authored technical documentation covering performance, business impact, and deployment considerations.",
+      "Built and deployed end-to-end ML pipelines across computer vision and NLP, delivering three production-style systems. Handled the full model lifecycle from preprocessing through training, tuning and evaluation, and wrote the technical documentation covering performance, business impact and deployment.",
   },
   {
     type: "education",
@@ -408,47 +409,33 @@ export const timeline = [
     period: "2019 — 2024",
     location: "Bengaluru, India",
     description:
-      "Managed equity and derivatives portfolios for 50+ clients using fundamental and technical analysis, valuation, and options strategy. Built Python and Excel screening workflows to track positions and quantify downside risk — and translated the results into recommendations non-technical clients could act on.",
+      "Ran an independent practice built around portfolio management — equity and derivatives for 50+ clients, using fundamental and technical analysis alongside options strategy. Also handled market consultation, taught clients the practical side of trading (placing orders, stop losses, targets), filed ITRs, and advised on life insurance. Built Python and Excel workflows to screen positions and track downside risk.",
   },
 ];
 
 /* ────────────────────────────────────────────────
- *  Testimonials
- *  ⚠️  These are PLACEHOLDERS — replace them with real quotes from
- *  colleagues, mentors, or clients before you go live. Set
- *  `testimonials = []` to hide the section in the meantime.
+ *  Testimonials — currently OFF
+ *
+ *  The section is hidden while this array is empty, which is the
+ *  right default: no testimonials reads as neutral, placeholder
+ *  ones read as unfinished.
+ *
+ *  To switch it back on, add real quotes in this shape:
+ *
+ *    { quote: "…", name: "Priya Sharma", role: "Team Lead, Rubixe" }
+ *
+ *  Good people to ask: your Rubixe manager, your DataMites mentor,
+ *  or a long-standing advisory client.
  * ──────────────────────────────────────────────── */
-export const testimonials = [
-  {
-    // TODO: replace with a real quote and attribution
-    quote:
-      "Chinmay turns a vague business problem into a working AI system, then explains it back in language anyone in the room can follow.",
-    name: "Placeholder Name",
-    role: "Placeholder Role, Company",
-  },
-  {
-    // TODO: replace with a real quote and attribution
-    quote:
-      "The financial domain knowledge made the difference. The retrieval system he built actually understood how our analysts work.",
-    name: "Placeholder Name",
-    role: "Placeholder Role, Company",
-  },
-  {
-    // TODO: replace with a real quote and attribution
-    quote:
-      "He picked up an unfamiliar stack faster than anyone I've worked with and was contributing meaningfully within weeks.",
-    name: "Placeholder Name",
-    role: "Placeholder Role, Company",
-  },
-];
+export const testimonials = [];
 
 /* ────────────────────────────────────────────────
  *  Contact section + social links
  * ──────────────────────────────────────────────── */
 export const contact = {
-  headline: "Let's build something together",
+  headline: "Let's talk",
   blurb:
-    "I'm open to AI engineering, data science, and data analyst roles — and always happy to talk shop about retrieval systems, markets, or where the two meet.",
+    "I'm looking for roles in AI engineering, data science and data analysis. If you're working on something where finance and AI overlap, I'd particularly like to hear about it.",
 
   // TODO ─ REQUIRED for the form to work:
   //  1. Create a free account at https://formspree.io
