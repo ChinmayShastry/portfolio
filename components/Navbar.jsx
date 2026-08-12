@@ -80,7 +80,7 @@ export default function Navbar() {
           href="#top"
           className="font-display text-lg font-semibold tracking-tight transition-colors hover:text-terracotta dark:hover:text-ember"
         >
-          {profile.firstName}
+          {profile.name}
           <span className="text-terracotta dark:text-ember">.</span>
         </a>
 

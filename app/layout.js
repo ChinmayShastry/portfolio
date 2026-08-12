@@ -66,6 +66,10 @@ const themeInitScript = `
       document.documentElement.classList.add("dark");
     }
   } catch (e) {}
+  // Enables the scroll-reveal animation. Sections are visible by default;
+  // this class is what allows them to start hidden. If this script never
+  // runs, the page simply renders with everything already showing.
+  document.documentElement.classList.add("js-ready");
 })();
 `;
 

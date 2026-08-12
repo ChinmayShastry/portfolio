@@ -55,7 +55,6 @@ export const siteMeta = {
  * ──────────────────────────────────────────────── */
 export const profile = {
   name: "Chinmay Shastry",
-  firstName: "Chinmay",
   location: "Bengaluru, India",
   email: "chinmay.v.shastry@gmail.com",
 
@@ -85,6 +84,7 @@ export const profile = {
  * ──────────────────────────────────────────────── */
 export const navLinks = [
   { label: "About", href: "#about" },
+  { label: "Why Me", href: "#why" },
   { label: "What I Do", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Journey", href: "#experience" },
@@ -100,10 +100,10 @@ export const about = {
 
   // Each string renders as its own paragraph
   bio: [
-    "Hi, I'm Chinmay. I'm an AI engineer in Bengaluru, and before this I ran an independent financial practice for about five years.",
-    "That practice was built around portfolio management — equity and derivatives for a client base that grew past fifty. Around it I did what a small practice does: market consultation, teaching people how to actually place an order and set a stop loss, filing ITRs, advising on life insurance. Most of the job was explaining something complicated to someone with their own money on the line.",
-    "I moved into AI properly in 2025, through an offline engineering programme and then a year of project work. Since then I've built RAG pipelines, agentic tools and deep-learning models, three of which are live and public. What I'm after now is the overlap between the two: finance problems worth solving, solved with AI.",
-    "Outside of that I'm usually part-way through a course I said I'd finish — right now FastAPI, MCP and system design — and I still watch the markets out of habit.",
+    "I'm Chinmay Shastry, an AI engineer in Bengaluru. Before this I spent about five years running my own financial practice.",
+    "The core of it was portfolio management — equity and derivatives, for a client list that eventually passed fifty. The rest was whatever the client needed: market consultation, sitting with someone until they were comfortable placing their own order and setting a stop loss, ITR filing, life insurance. I got used to explaining things to people who were nervous about their money.",
+    "In 2025 I did the DataMites AI engineering programme here in Bengaluru — offline, in a classroom. From there I joined Rubixe as an AI engineer intern and spent nine months on computer vision and NLP systems, including a sign-language recogniser that reached 99.87% across 24 gestures. Alongside that I kept building my own things: a hybrid RAG system, an agentic résumé analyser, a finance research assistant. Three of them are live, and you can click straight through from this page.",
+    "What I want next sits between the two. Most of the AI work I find genuinely interesting has a finance problem somewhere underneath it. Right now I'm learning FastAPI, MCP and system design, and I still check the markets most mornings.",
   ],
 
   // Quick facts / stats shown next to the bio
@@ -112,6 +112,35 @@ export const about = {
     { value: "10+", label: "AI/ML projects built" },
     { value: "50+", label: "Clients advised" },
     { value: "3", label: "AI programmes & certifications" },
+  ],
+};
+
+/* ────────────────────────────────────────────────
+ *  "Why should you hire me?" section
+ *  Keep these honest and specific — vague strengths ("hard worker",
+ *  "team player") are the fastest way to lose a reader.
+ * ──────────────────────────────────────────────── */
+export const whyHireMe = {
+  eyebrow: "Why Me",
+  title: "Why should you hire me?",
+  blurb: "Fair question. Here's the honest version.",
+  reasons: [
+    {
+      title: "I bring a domain most AI engineers don't have",
+      body: "Five years in equity and derivatives means nobody has to explain what a drawdown is, why a compliance document can't be loosely paraphrased, or what an analyst actually does all day. If your problem touches money, I've already lived in it.",
+    },
+    {
+      title: "I've actually shipped things",
+      body: "Three of my projects are live right now with public links, and the code is on GitHub. You can click through and judge them yourself before we ever get on a call.",
+    },
+    {
+      title: "I can explain the complicated part",
+      body: "I spent years telling clients why their portfolio moved, to people who were anxious and didn't speak the jargon. That turns out to be the same skill as explaining a model's output to whoever has to sign off on it.",
+    },
+    {
+      title: "I pick things up quickly",
+      body: "I came from a commerce degree and retrained into deployed LLM applications inside a year. At the moment I'm working through FastAPI, MCP and system design — ask me again in a few months.",
+    },
   ],
 };
 

@@ -13,7 +13,7 @@ export default function About() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="About"
-          title={`A little about ${profile.firstName}`}
+          title={`A little about ${profile.name}`}
         />
 
         <div className="grid items-center gap-12 md:grid-cols-[2fr_3fr] md:gap-16">
