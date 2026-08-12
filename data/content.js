@@ -6,19 +6,19 @@
  *  experience, testimonials, socials, SEO tags) lives here.
  *  Components read from this file — you never need to touch them.
  *
- *  It has been pre-filled from Chinmay's résumé (Feb 2026 version).
- *  Anything marked  // TODO  still needs your attention — mostly
- *  links, photos, and the Formspree form ID.
+ *  Built from Chinmay_Shastry_AI_Engineer_Resume.pdf (Aug 2026).
+ *  Positioned for Data Analyst / Data Scientist / AI Engineer roles.
+ *  Anything marked  // TODO  still needs your attention.
  * ════════════════════════════════════════════════════════════════
  */
 
 import {
   Bot,
+  Database,
   BrainCircuit,
-  CandlestickChart,
   BarChart3,
   Rocket,
-  Handshake,
+  CandlestickChart,
   Github,
   Linkedin,
   Twitter,
@@ -29,9 +29,9 @@ import {
  *  SEO / social sharing tags (used in app/layout.js)
  * ──────────────────────────────────────────────── */
 export const siteMeta = {
-  title: "Chinmay Shastry — AI Engineer",
+  title: "Chinmay Shastry — AI / GenAI Engineer",
   description:
-    "AI Engineer with a finance background — building RAG systems, agentic LLM workflows, and deep-learning models in Bengaluru, India.",
+    "AI/GenAI Engineer in Bengaluru building hybrid RAG pipelines, agentic LLM workflows, and deep-learning systems — with five years in financial markets behind the technical decisions.",
   // TODO: replace with your real deployed URL after your first deploy
   url: "https://your-portfolio.vercel.app",
   // TODO: drop a 1200×630 PNG/JPG at public/images/og.png and set this
@@ -39,11 +39,13 @@ export const siteMeta = {
   ogImage: "",
   keywords: [
     "AI Engineer",
+    "GenAI Engineer",
+    "Data Scientist",
+    "Data Analyst",
     "Machine Learning",
     "RAG",
     "LLM",
-    "GenAI",
-    "Finance",
+    "LangChain",
     "Bengaluru",
   ],
 };
@@ -58,20 +60,21 @@ export const profile = {
   email: "chinmay.v.shastry@gmail.com",
 
   // Small pulsing badge at the top of the hero.
-  // Set to "" to hide it (e.g. once you're no longer job-hunting).
-  availability: "Open to AI engineering roles",
+  // Set to "" to hide it (e.g. once you've accepted a role).
+  availability: "Available to join immediately",
 
-  // The typing/rotating tagline in the hero — add or remove freely
+  // The typing/rotating tagline in the hero. These deliberately span
+  // all three role families you're targeting.
   roles: [
-    "AI Engineer",
+    "AI / GenAI Engineer",
+    "Data Scientist",
+    "Data Analyst",
     "RAG & LLM Systems Builder",
-    "Finance Professional",
-    "Deep Learning Practitioner",
   ],
 
   // One-liner under the tagline
   intro:
-    "I build AI systems with a financier's eye — hybrid RAG pipelines, agentic workflows, and deep-learning models that turn messy real-world data into confident decisions.",
+    "I build applied GenAI systems — hybrid RAG pipelines, agentic LLM workflows, and deep-learning models taken from prototype to live deployment. Five years reading financial markets taught me to ask what an answer is worth before asking how to model it.",
 
   // Résumé download link (file lives in /public). Set to "" to hide the button.
   resumeUrl: "/Chinmay_Shastry_Resume.pdf",
@@ -92,29 +95,27 @@ export const navLinks = [
  *  About section
  * ──────────────────────────────────────────────── */
 export const about = {
-  // TODO: replace the placeholder with a real photo — drop it at
-  // public/images/profile.jpg and change this path.
-  photo: "/images/profile.svg",
+  photo: "/images/profile.jpg",
   photoAlt: "Portrait of Chinmay Shastry",
 
   // Each string renders as its own paragraph
   bio: [
-    "Hi, I'm Chinmay — a Bengaluru-based AI engineer who found his way into technology through an unexpected door: the stock market. I spent five years as a portfolio manager and financial advisor, helping people make sense of their money through market highs and lows. Somewhere along the way, I realised I was more fascinated by the patterns hiding in the data than by the trades themselves — so I followed that curiosity all the way into AI.",
-    "These days I split my time between building AI systems, studying fintech at IIM Bangalore, and keeping one eye on the markets (old habits die hard). What drives me is the sweet spot where the two worlds meet — using technology to make finance clearer, fairer, and a little more human.",
-    "Outside of work, I'm a chronic learner: always halfway through a new course, a finance book, or an experiment that started as 'just a quick idea'. I believe in clear communication, honest work, and building things people actually use.",
+    "Hi, I'm Chinmay. I came to AI the long way round — five years managing equity and derivatives portfolios in Bengaluru, pricing risk and reading balance sheets for a book of 50+ clients. What pulled me across was realising I cared more about the patterns underneath the trades than the trades themselves.",
+    "So I retrained properly. In under two years I went from my first Python script to shipping production-style LLM applications — hybrid RAG systems, agentic tools, computer-vision models — most of them live and public. Picking up new frameworks quickly turned out to be the part that came naturally; the finance years gave me the sharper instinct for which problems are actually worth solving.",
+    "Today I work across the full span: GenAI engineering, machine learning, and the data analysis that underpins both. I'm still a relentless learner — currently deep in FastAPI, MCP, and system design — I still keep one eye on the markets, and I still think the best technical work is the kind you can explain to someone who doesn't share your vocabulary.",
   ],
 
   // Quick facts / stats shown next to the bio
   stats: [
     { value: "5+", label: "Years in financial markets" },
-    { value: "10+", label: "AI/ML projects built" },
+    { value: "10+", label: "AI/ML projects shipped" },
     { value: "50+", label: "Clients advised" },
-    { value: "3", label: "AI certifications" },
+    { value: "3", label: "Professional AI credentials" },
   ],
 };
 
 /* ────────────────────────────────────────────────
- *  Skills / "What I Do" section
+ *  "What I Do" service cards
  *  icon: any icon imported from lucide-react at the top of this file
  * ──────────────────────────────────────────────── */
 export const services = [
@@ -122,89 +123,169 @@ export const services = [
     icon: Bot,
     title: "GenAI & LLM Engineering",
     description:
-      "Hybrid RAG pipelines, agentic workflows, and prompt engineering with LangChain, LlamaIndex, FAISS/ChromaDB, and the OpenAI API.",
+      "Agentic workflows, prompt and context engineering, and multi-model pipelines built with LangChain, LangGraph, and the major provider APIs.",
+  },
+  {
+    icon: Database,
+    title: "RAG & Retrieval Systems",
+    description:
+      "Hybrid retrieval combining BM25, dense semantic search, and CrossEncoder reranking — measured with RAGAS, not guesswork.",
   },
   {
     icon: BrainCircuit,
     title: "Machine & Deep Learning",
     description:
-      "End-to-end ML pipelines — CNNs, transfer learning, XGBoost — built with TensorFlow, PyTorch, and scikit-learn.",
-  },
-  {
-    icon: CandlestickChart,
-    title: "Finance & Quant Analysis",
-    description:
-      "Equity markets, derivatives strategy, portfolio management, and time-series modeling grounded in real advisory experience.",
+      "End-to-end pipelines across NLP and computer vision — CNNs, transfer learning, and gradient boosting, owned from preprocessing to evaluation.",
   },
   {
     icon: BarChart3,
-    title: "Data Analysis & Visualization",
+    title: "Data Analysis & Insight",
     description:
-      "Feature engineering, cohort analysis, and clear storytelling with Pandas, Plotly, Power BI, and Tableau.",
+      "Feature engineering, time-series and cohort analysis, and dashboards that answer the business question rather than just displaying the data.",
   },
   {
     icon: Rocket,
-    title: "Deployment & MLOps",
+    title: "Deployment & Delivery",
     description:
-      "Shipping models to real users via Streamlit, Gradio, HuggingFace Spaces, Docker, and AWS — with logging, caching, and retries.",
+      "Getting models in front of real users — Streamlit Cloud, Gradio, and HuggingFace Spaces, with caching, retries, and logging that hold up in use.",
   },
   {
-    icon: Handshake,
-    title: "Business & Client Advisory",
+    icon: CandlestickChart,
+    title: "Financial Domain Depth",
     description:
-      "Translating complex technical and financial detail into clear, outcome-oriented recommendations for stakeholders.",
+      "Equity markets, derivatives, valuation, and portfolio risk — genuine domain fluency, not a weekend spent reading about it.",
   },
-];
-
-// The chip cloud under the service cards — add/remove freely
-export const toolbelt = [
-  "Python",
-  "SQL",
-  "LangChain",
-  "LlamaIndex",
-  "OpenAI API",
-  "HuggingFace",
-  "FAISS",
-  "ChromaDB",
-  "TensorFlow",
-  "PyTorch",
-  "scikit-learn",
-  "XGBoost",
-  "Pandas",
-  "NumPy",
-  "Streamlit",
-  "Power BI",
-  "Tableau",
-  "Docker",
-  "AWS",
-  "Git",
 ];
 
 /* ────────────────────────────────────────────────
- *  Projects section
- *  - image: swap the SVG placeholders for real screenshots
- *    (drop files in public/images/projects/ and update the paths)
+ *  Skills, grouped by category.
+ *  `note` renders as a small caption under the group.
+ * ──────────────────────────────────────────────── */
+export const skillGroups = [
+  {
+    title: "Languages & Data",
+    items: ["Python", "SQL", "Pandas", "NumPy", "SciPy"],
+  },
+  {
+    title: "GenAI & LLM",
+    items: [
+      "LangChain",
+      "LangGraph",
+      "LlamaIndex",
+      "OpenAI API",
+      "Anthropic Claude API",
+      "Google Gemini API",
+      "Groq API",
+      "OpenRouter",
+      "Omniroute",
+      "HuggingFace",
+      "Ollama",
+      "Gemma",
+      "NVIDIA Nemotron",
+      "Prompt Engineering",
+      "Agentic Workflows",
+      "Multimodal Extraction",
+    ],
+  },
+  {
+    title: "Retrieval & Vector Search",
+    items: [
+      "RAG",
+      "FAISS",
+      "ChromaDB",
+      "Pinecone",
+      "BM25",
+      "CrossEncoder Reranking",
+      "Semantic Chunking",
+      "Hybrid Search",
+      "RAGAS Evaluation",
+    ],
+  },
+  {
+    title: "Machine Learning & Deep Learning",
+    items: [
+      "scikit-learn",
+      "TensorFlow",
+      "Keras",
+      "PyTorch",
+      "XGBoost",
+      "Random Forest",
+      "CNN",
+      "Transfer Learning",
+      "SHAP",
+    ],
+  },
+  {
+    title: "Analysis, Visualization & BI",
+    items: [
+      "Matplotlib",
+      "Seaborn",
+      "Plotly",
+      "Power BI",
+      "Tableau",
+      "Feature Engineering",
+      "Time Series",
+      "Cohort Analysis",
+    ],
+  },
+  {
+    title: "Deployment & Tooling",
+    items: [
+      "Streamlit",
+      "Streamlit Cloud",
+      "Gradio",
+      "HuggingFace Spaces",
+      "Git",
+      "GitHub",
+      "REST APIs",
+      "Docker",
+      "AWS EC2 / SageMaker",
+    ],
+  },
+  {
+    title: "AI-Assisted Development",
+    items: [
+      "Claude",
+      "Claude Code",
+      "Cowork",
+      "OpenAI Codex",
+      "Cursor",
+      "Antigravity",
+      "GitHub Copilot",
+      "Gemini CLI",
+    ],
+    note: "Claude, Claude Code and Cowork are my daily drivers; I've worked across the rest of the agentic-coding landscape too.",
+  },
+];
+
+/* Currently learning — shown as a separate, clearly-labelled group.
+   Keeping this honest and visible reads as momentum, and it's the
+   first thing to promote into skillGroups once you've shipped with it. */
+export const learning = {
+  title: "Currently growing into",
+  note: "Actively building with these right now — listed here rather than above until they're in something I've shipped.",
+  items: [
+    "FastAPI",
+    "Flask",
+    "MCP (Model Context Protocol)",
+    "Pydantic / Structured Outputs",
+    "System Design",
+    "MLflow",
+    "GitHub Actions",
+  ],
+};
+
+/* ────────────────────────────────────────────────
+ *  Projects
  *  - liveUrl / sourceUrl: set to "" to hide that button
+ *  - featured: true adds a small badge on the card
  * ──────────────────────────────────────────────── */
 export const projects = [
-  {
-    // `featured: true` adds a small "Featured" badge on the card.
-    // Use it on your one or two strongest projects.
-    featured: true,
-    title: "AI Finance Research Assistant",
-    description:
-      "AI-powered research assistant for Nifty 250 stocks and commodities — real-time Yahoo Finance + NewsAPI pipelines, GPT-4o-mini analysis, sentiment scoring, and interactive Plotly dashboards.",
-    image: "/images/projects/finance-assistant.svg",
-    alt: "AI Finance Research Assistant project preview",
-    tags: ["Python", "LLM", "Streamlit", "Plotly", "Finance"],
-    liveUrl: "https://ai-finance-research-assistant.streamlit.app/",
-    sourceUrl: "https://github.com/ChinmayShastry/ai-finance-research-assistant",
-  },
   {
     featured: true,
     title: "DocChat AI — Hybrid RAG",
     description:
-      "Document intelligence with BM25 + semantic search + CrossEncoder reranking. Improved RAGAS context precision from ~78% to 100%, with multi-document support and streaming answers.",
+      "Document intelligence combining BM25 keyword retrieval, dense semantic search, and CrossEncoder reranking — lifting RAGAS context precision from ~78% to 100% on the evaluation set. Multi-document support with token-level streaming.",
     image: "/images/projects/docchat.svg",
     alt: "DocChat AI hybrid RAG project preview",
     tags: ["RAG", "LangChain", "FAISS", "BM25", "Reranking"],
@@ -212,49 +293,58 @@ export const projects = [
     sourceUrl: "https://github.com/ChinmayShastry/docchat-ai",
   },
   {
-    title: "Enterprise RAG System",
+    featured: true,
+    title: "AI Finance Research Assistant",
     description:
-      "Production-ready RAG pipeline with RBAC-enforced document access, rotating query logs, LRU caching, and Tenacity retries — mirroring data-governance needs in asset management.",
-    image: "/images/projects/enterprise-rag.svg",
-    alt: "Enterprise RAG system project preview",
-    tags: ["RAG", "RBAC", "Production", "Streamlit Cloud"],
-    liveUrl: "",
-    // TODO: no public repo found for this project — push it to GitHub
-    // and replace this with the exact repo URL
-    sourceUrl: "https://github.com/ChinmayShastry",
+      "LLM-powered research tool covering Nifty 250 equities and commodities. Live Yahoo Finance and NewsAPI pipelines feed GPT-4o-mini modules for sentiment analysis and long-form research, surfaced through interactive Plotly dashboards.",
+    image: "/images/projects/finance-assistant.svg",
+    alt: "AI Finance Research Assistant project preview",
+    tags: ["LLM", "Finance", "Streamlit", "Plotly", "NewsAPI"],
+    liveUrl: "https://ai-finance-research-assistant.streamlit.app/",
+    sourceUrl: "https://github.com/ChinmayShastry/ai-finance-research-assistant",
   },
   {
     title: "LLM-Powered Resume Analyzer",
     description:
-      "Agentic resume evaluation with autonomous multi-step reasoning (parse → extract → analyse → output) producing role-specific skill-gap analysis and live scoring dashboards.",
+      "Agentic evaluation system with autonomous multi-step reasoning (parse → extract → analyse → output), producing structured, role-specific skill-gap analysis and candidate recommendations through a live scoring dashboard.",
     image: "/images/projects/resume-analyzer.svg",
     alt: "LLM-powered resume analyzer project preview",
-    tags: ["Agentic AI", "LLM", "Streamlit", "NLP"],
+    tags: ["Agentic AI", "LLM", "NLP", "Streamlit"],
     liveUrl: "https://resume-aianalyzer.streamlit.app/",
     sourceUrl: "https://github.com/ChinmayShastry/ai-resume-analyzer",
   },
   {
-    title: "Pneumonia Detection CNN",
+    title: "Enterprise RAG System",
     description:
-      "Custom 4-block CNN with VGG16/ResNet50 transfer learning for chest X-ray classification, tuned for clinical sensitivity with Grad-CAM interpretability.",
-    image: "/images/projects/pneumonia-cnn.svg",
-    alt: "Pneumonia detection CNN project preview",
-    tags: ["Computer Vision", "CNN", "Transfer Learning", "Grad-CAM"],
+      "Modular, production-oriented RAG pipeline with RBAC-enforced document access, rotating query logs, LRU caching, and Tenacity retry logic — plus a feedback dashboard for continuous quality monitoring. The governance design mirrors regulated environments.",
+    image: "/images/projects/enterprise-rag.svg",
+    alt: "Enterprise RAG system project preview",
+    tags: ["RAG", "RBAC", "Production", "Monitoring"],
     liveUrl: "",
-    // TODO: no public repo found for this project — push it to GitHub
-    // and replace this with the exact repo URL
+    // TODO: no public repo found for this one — push it to GitHub and
+    // replace this with the exact repo URL
     sourceUrl: "https://github.com/ChinmayShastry",
   },
   {
-    title: "Telecom Churn Prediction",
+    title: "Computer Vision & Deep Learning",
     description:
-      "Business-centric churn model on a 243K-customer dataset using XGBoost and SHAP — quantifying cost-benefit trade-offs to drive retention strategy.",
-    image: "/images/projects/churn-prediction.svg",
-    alt: "Telecom churn prediction project preview",
-    tags: ["XGBoost", "SHAP", "Predictive Modeling"],
+      "Three production-style vision systems: a 4-block CNN for pneumonia detection with VGG16/ResNet50 transfer learning and Grad-CAM interpretability, Indian Sign Language recognition across 24 gestures at 99.87% accuracy, and a 43-class traffic-sign classifier.",
+    image: "/images/projects/computer-vision.svg",
+    alt: "Computer vision and deep learning portfolio preview",
+    tags: ["CNN", "Transfer Learning", "Grad-CAM", "TensorFlow"],
     liveUrl: "",
-    // TODO: no public repo found for this project — push it to GitHub
-    // and replace this with the exact repo URL
+    // TODO: push these to GitHub and link the repo here
+    sourceUrl: "https://github.com/ChinmayShastry",
+  },
+  {
+    title: "Predictive Modeling & Forecasting",
+    description:
+      "Telecom churn prediction on a 243K-customer dataset using XGBoost and SHAP, quantifying cost-benefit trade-offs to drive retention strategy — alongside a custom OLS-estimated SARIMA model with full ADF/ACF/PACF diagnostics for recursive forecasting.",
+    image: "/images/projects/predictive-modeling.svg",
+    alt: "Predictive modeling and forecasting project preview",
+    tags: ["XGBoost", "SHAP", "SARIMA", "Time Series"],
+    liveUrl: "",
+    // TODO: push these to GitHub and link the repo here
     sourceUrl: "https://github.com/ChinmayShastry",
   },
 ];
@@ -268,28 +358,39 @@ export const timeline = [
     type: "work",
     title: "AI Engineer Intern",
     org: "Rubixe AI Solutions",
-    period: "Dec 2025 — May 2026",
+    period: "Oct 2025 — Jun 2026",
     location: "Bengaluru, India",
     description:
-      "Project-based AI engineering internship: designed and deployed end-to-end ML pipelines across computer vision and NLP — pneumonia detection, traffic-sign recognition, and Indian Sign Language recognition (99.87% accuracy).",
+      "Designed and deployed end-to-end ML pipelines across computer vision and NLP, delivering three production-style systems. Owned the full model lifecycle — preprocessing, feature engineering, training, tuning, evaluation — and authored technical documentation covering performance, business impact, and deployment considerations.",
   },
   {
     type: "education",
-    title: "IIMBx Fintech Programme",
-    org: "IIM Bangalore",
+    title: "Fintech Programme",
+    org: "IIM Bangalore (IIMBx)",
     period: "2025 — Sep 2026 (expected)",
     location: "Online",
+    // TODO: this isn't on your current résumé — either add it there or
+    // remove this entry, so the two documents agree.
     description:
-      "Deepening financial domain proficiency — fintech strategy, markets, and the business side of applied AI.",
+      "Deepening financial domain expertise — fintech strategy, market structure, and the commercial side of applied AI.",
   },
   {
     type: "certification",
     title: "AI Engineer Certifications",
-    org: "DataMites · NASSCOM · IABAC",
-    period: "2025 — 2026",
+    org: "NASSCOM · IABAC",
+    period: "2026",
+    location: "India",
+    description:
+      "Independently accredited AI Engineer certifications from NASSCOM and IABAC, validating applied machine learning and GenAI competency.",
+  },
+  {
+    type: "education",
+    title: "AI Engineer Professional Program",
+    org: "DataMites",
+    period: "2025",
     location: "Bengaluru, India",
     description:
-      "AI Engineer Professional Program (DataMites, offline) plus AI Engineer certifications from NASSCOM and IABAC.",
+      "Intensive offline professional programme covering the applied AI engineering stack — from classical machine learning through deep learning and deployment.",
   },
   {
     type: "education",
@@ -303,36 +404,41 @@ export const timeline = [
   {
     type: "work",
     title: "Portfolio Manager & Financial Advisor",
-    org: "Independent — Freelance",
+    org: "Independent / Freelance",
     period: "2019 — 2024",
     location: "Bengaluru, India",
     description:
-      "Managed equity and derivatives portfolios for 50+ clients using fundamental and technical analysis, corporate-finance valuation, and options strategies to optimize risk-adjusted returns.",
+      "Managed equity and derivatives portfolios for 50+ clients using fundamental and technical analysis, valuation, and options strategy. Built Python and Excel screening workflows to track positions and quantify downside risk — and translated the results into recommendations non-technical clients could act on.",
   },
 ];
 
 /* ────────────────────────────────────────────────
- *  Testimonials — set `testimonials = []` to hide the section
+ *  Testimonials
+ *  ⚠️  These are PLACEHOLDERS — replace them with real quotes from
+ *  colleagues, mentors, or clients before you go live. Set
+ *  `testimonials = []` to hide the section in the meantime.
  * ──────────────────────────────────────────────── */
 export const testimonials = [
-  // TODO: replace all three with real quotes (colleagues, clients, mentors)
   {
+    // TODO: replace with a real quote and attribution
     quote:
-      "Chinmay has a rare ability to translate a vague business problem into a working AI system — and then explain it back in plain language.",
+      "Chinmay turns a vague business problem into a working AI system, then explains it back in language anyone in the room can follow.",
     name: "Placeholder Name",
-    role: "Senior Data Scientist, Example Corp",
+    role: "Placeholder Role, Company",
   },
   {
+    // TODO: replace with a real quote and attribution
     quote:
-      "His financial domain knowledge made all the difference. The RAG system he built actually understood how our analysts work.",
+      "The financial domain knowledge made the difference. The retrieval system he built actually understood how our analysts work.",
     name: "Placeholder Name",
-    role: "Product Manager, Example Fintech",
+    role: "Placeholder Role, Company",
   },
   {
+    // TODO: replace with a real quote and attribution
     quote:
-      "Clear communicator, fast learner, and relentlessly curious. Chinmay raised the bar for every project he touched.",
+      "He picked up an unfamiliar stack faster than anyone I've worked with and was contributing meaningfully within weeks.",
     name: "Placeholder Name",
-    role: "Mentor, AI Engineering Program",
+    role: "Placeholder Role, Company",
   },
 ];
 
@@ -342,7 +448,7 @@ export const testimonials = [
 export const contact = {
   headline: "Let's build something together",
   blurb:
-    "Whether it's an AI engineering role, a freelance project, or just a conversation about RAG systems and markets — my inbox is open.",
+    "I'm open to AI engineering, data science, and data analyst roles — and always happy to talk shop about retrieval systems, markets, or where the two meet.",
 
   // TODO ─ REQUIRED for the form to work:
   //  1. Create a free account at https://formspree.io

@@ -1,13 +1,32 @@
 "use client";
 
+import { Sparkles } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import { services, toolbelt } from "@/data/content";
+import { services, skillGroups, learning } from "@/data/content";
+
+/** A single chip. `muted` styles the "currently learning" variant. */
+function Chip({ label, muted = false }) {
+  return (
+    <li
+      className={
+        muted
+          ? "rounded-full border border-dashed border-brown/40 bg-transparent px-3.5 py-1.5 text-sm font-medium text-cocoa transition-colors hover:border-amber hover:text-charcoal dark:border-latte/30 dark:text-latte dark:hover:border-honey dark:hover:text-parchment"
+          : "rounded-full border border-linen bg-cream px-3.5 py-1.5 text-sm font-medium text-cocoa transition-colors hover:border-amber hover:text-charcoal dark:border-bark dark:bg-night dark:text-latte dark:hover:border-honey dark:hover:text-parchment"
+      }
+    >
+      {label}
+    </li>
+  );
+}
 
 /**
- * Skills / "What I Do" — a grid of service cards (icon + title +
- * description) followed by a chip cloud of tools & technologies.
- * Both lists live in data/content.js.
+ * Skills / "What I Do" — service cards describing the work, followed
+ * by the toolkit grouped by category, and a clearly-separated
+ * "currently growing into" group.
+ *
+ * All three lists live in data/content.js (`services`, `skillGroups`,
+ * `learning`).
  */
 export default function Skills() {
   return (
@@ -16,7 +35,7 @@ export default function Skills() {
         <SectionHeading
           eyebrow="What I Do"
           title="Skills that bridge two worlds"
-          description="Applied AI engineering, grounded in five years of real financial-markets experience."
+          description="Applied AI engineering and data work, grounded in five years of real financial-markets experience."
         />
 
         {/* Service cards */}
@@ -41,22 +60,56 @@ export default function Skills() {
           })}
         </div>
 
-        {/* Toolbelt chips */}
-        <Reveal delay={0.15} className="mt-14">
-          <h3 className="mb-5 text-center text-sm font-semibold uppercase tracking-[0.2em] text-cocoa dark:text-latte">
-            Tools I reach for
+        {/* Toolkit, grouped by category */}
+        <Reveal delay={0.1} className="mt-16">
+          <h3 className="mb-8 text-center font-display text-2xl font-semibold">
+            The toolkit
           </h3>
-          <ul className="flex flex-wrap justify-center gap-2.5">
-            {toolbelt.map((tool) => (
-              <li
-                key={tool}
-                className="rounded-full border border-linen bg-cream px-4 py-1.5 text-sm font-medium text-cocoa transition-colors hover:border-amber hover:text-charcoal dark:border-bark dark:bg-night dark:text-latte dark:hover:border-honey dark:hover:text-parchment"
-              >
-                {tool}
-              </li>
-            ))}
-          </ul>
         </Reveal>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {skillGroups.map((group, i) => (
+            <Reveal key={group.title} delay={0.06 * (i % 2)} className="h-full">
+              <div className="h-full rounded-3xl border border-linen bg-cream/70 p-6 dark:border-bark dark:bg-night/50">
+                <h4 className="mb-4 text-sm font-semibold uppercase tracking-[0.15em] text-terracotta dark:text-ember">
+                  {group.title}
+                </h4>
+                <ul className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <Chip key={item} label={item} />
+                  ))}
+                </ul>
+                {group.note && (
+                  <p className="mt-4 text-xs leading-relaxed text-cocoa/80 dark:text-latte/80">
+                    {group.note}
+                  </p>
+                )}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        {/* Currently learning — deliberately styled apart from the above */}
+        {learning?.items?.length > 0 && (
+          <Reveal delay={0.1} className="mt-6">
+            <div className="rounded-3xl border border-dashed border-amber/50 bg-amber/5 p-6 dark:border-honey/40 dark:bg-honey/5">
+              <h4 className="mb-4 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.15em] text-brown dark:text-honey">
+                <Sparkles size={15} aria-hidden="true" />
+                {learning.title}
+              </h4>
+              <ul className="flex flex-wrap gap-2">
+                {learning.items.map((item) => (
+                  <Chip key={item} label={item} muted />
+                ))}
+              </ul>
+              {learning.note && (
+                <p className="mt-4 text-xs leading-relaxed text-cocoa/80 dark:text-latte/80">
+                  {learning.note}
+                </p>
+              )}
+            </div>
+          </Reveal>
+        )}
       </div>
     </section>
   );

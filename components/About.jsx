@@ -23,14 +23,13 @@ export default function About() {
               aria-hidden="true"
               className="absolute -inset-3 rotate-2 rounded-[2rem] bg-amber/25 dark:bg-honey/15"
             />
-            <div className="relative overflow-hidden rounded-[2rem] shadow-lift">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-lift">
               <Image
                 src={about.photo}
                 alt={about.photoAlt}
-                width={600}
-                height={600}
-                className="h-auto w-full object-cover"
-                priority={false}
+                fill
+                sizes="(max-width: 768px) 90vw, 40vw"
+                className="object-cover object-top"
               />
             </div>
           </Reveal>

@@ -22,7 +22,9 @@ Name, bio, roles, skills, projects, timeline, testimonials, social links, and SE
 | Hero availability badge | `profile.availability` (set `""` to hide) |
 | SEO title / description / URL | `siteMeta` |
 | Bio paragraphs, photo, stats | `about` |
-| Skill cards + tool chips | `services`, `toolbelt` |
+| "What I Do" cards | `services` |
+| Toolkit chips, grouped by category | `skillGroups` |
+| "Currently growing into" chips | `learning` |
 | Project cards (links, tags, images) | `projects` — add `featured: true` for a badge |
 | Work / education timeline | `timeline` |
 | Testimonial quotes | `testimonials` |
@@ -40,7 +42,7 @@ That's it — submissions will arrive in your email inbox.
 
 ### Replacing the placeholder images
 
-- **Your photo** → drop a square image at `public/images/profile.jpg` and update `about.photo` to `"/images/profile.jpg"`
+- **Your photo** → already in place at `public/images/profile.jpg` (1200×1500, EXIF stripped). To swap it, overwrite that file with another 4:5 portrait
 - **Project screenshots** → drop 16:9 images (e.g. 1200×675) into `public/images/projects/` and update each project's `image` path
 - **Social share image** → drop a 1200×630 image at `public/images/og.png` and set `siteMeta.ogImage` to `"/images/og.png"`
 - **Résumé** → replace `public/Chinmay_Shastry_Resume.pdf` with the latest version (same filename, or update `profile.resumeUrl`)
