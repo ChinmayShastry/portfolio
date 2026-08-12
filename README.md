@@ -51,6 +51,32 @@ That's it — submissions will arrive in your email inbox.
 
 The three testimonials in `data/content.js` are **clearly-marked placeholders** ("Placeholder Name"). Either replace them with real quotes or set `testimonials = []` to hide the section — don't ship the placeholders.
 
+### Adding your intro video
+
+The video section stays completely hidden until you set `introVideo.src` in `data/content.js`, so you can record it whenever you're ready.
+
+**Option 1 — self-hosted (recommended: no third parties, no tracking)**
+
+1. Compress the recording first. A 90-second 720p clip should land at 15–25 MB:
+   ```bash
+   ffmpeg -i raw.mp4 -vf "scale=-2:720" -c:v libx264 -crf 26 -preset slow -c:a aac -b:a 128k -movflags +faststart intro.mp4
+   ```
+   `-movflags +faststart` matters — it lets playback begin before the whole file downloads.
+2. Save it to `public/media/intro.mp4`
+3. In `data/content.js`: set `type: "local"` and `src: "/media/intro.mp4"`
+
+> **Keep it under ~40 MB.** GitHub warns above 50 MB and hard-rejects files over 100 MB. If your video won't compress that far, use Option 2.
+
+**Option 2 — YouTube (for larger files)**
+
+1. Upload to YouTube and set visibility to **Unlisted** (reachable by link, hidden from search and your channel)
+2. Copy the 11-character ID from the URL — in `youtu.be/dQw4w9WgXcQ` that's `dQw4w9WgXcQ`
+3. In `data/content.js`: set `type: "youtube"` and `src: "dQw4w9WgXcQ"`
+
+Nothing loads from YouTube until the visitor actually clicks play, and it uses the `youtube-nocookie` domain — so no tracking cookies are set just by visiting your page.
+
+**Captions (strongly recommended).** Plenty of recruiters watch muted at their desk. Export a `.vtt` subtitle file, save it to `public/media/intro.vtt`, and set `captions: "/media/intro.vtt"`. YouTube can auto-generate one you can download and correct.
+
 ### Changing colors or fonts
 
 - Colors: all hex codes are documented at the top of [`tailwind.config.js`](tailwind.config.js)
