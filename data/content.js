@@ -32,8 +32,7 @@ export const siteMeta = {
   title: "Chinmay Shastry — AI / GenAI Engineer",
   description:
     "AI/GenAI Engineer in Bengaluru building hybrid RAG pipelines, agentic LLM workflows, and deep-learning systems — with five years in financial markets behind the technical decisions.",
-  // TODO: replace with your real deployed URL after your first deploy
-  url: "https://your-portfolio.vercel.app",
+  url: "https://chinmayshastryportfolio.vercel.app",
   // TODO: drop a 1200×630 PNG/JPG at public/images/og.png and set this
   // to "/images/og.png" for rich link previews on LinkedIn / X.
   ogImage: "",
