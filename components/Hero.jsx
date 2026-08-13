@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { ArrowRight, ChevronDown, Download, MapPin } from "lucide-react";
+import { ArrowRight, Briefcase, ChevronDown, Download, MapPin } from "lucide-react";
 import { profile } from "@/data/content";
 
 /**
@@ -94,6 +94,18 @@ export default function Hero() {
             <MapPin size={16} className="text-terracotta dark:text-ember" aria-hidden="true" />
             {profile.location}
           </span>
+
+          {/* Which cities you'd work in — recruiters filter on this early */}
+          {profile.openToCities?.length > 0 && (
+            <span className="flex items-center gap-2 text-sm font-medium text-cocoa dark:text-latte">
+              <Briefcase
+                size={16}
+                className="text-terracotta dark:text-ember"
+                aria-hidden="true"
+              />
+              Open to {profile.openToCities.join(" · ")}
+            </span>
+          )}
         </motion.div>
 
         <motion.h1

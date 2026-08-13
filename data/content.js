@@ -58,6 +58,10 @@ export const profile = {
   location: "Bengaluru, India",
   email: "chinmay.v.shastry@gmail.com",
 
+  // Cities you're open to working in — shown in the hero and in Contact.
+  // Recruiters filter hard on location, which is why it appears twice.
+  openToCities: ["Bengaluru", "Hyderabad", "Pune"],
+
   // Small pulsing badge at the top of the hero.
   // Set to "" to hide it (e.g. once you've accepted a role).
   availability: "Available to join immediately",
@@ -100,10 +104,10 @@ export const about = {
 
   // Each string renders as its own paragraph
   bio: [
-    "I'm Chinmay Shastry, an AI engineer in Bengaluru. Before this I spent about five years running my own financial practice.",
-    "The core of it was portfolio management — equity and derivatives, for a client list that eventually passed fifty. The rest was whatever the client needed: market consultation, sitting with someone until they were comfortable placing their own order and setting a stop loss, ITR filing, life insurance. I got used to explaining things to people who were nervous about their money.",
-    "In 2025 I did the DataMites AI engineering programme here in Bengaluru — offline, in a classroom. From there I joined Rubixe as an AI engineer intern and spent nine months on computer vision and NLP systems, including a sign-language recogniser that reached 99.87% across 24 gestures. Alongside that I kept building my own things: a hybrid RAG system, an agentic résumé analyser, a finance research assistant. Three of them are live, and you can click straight through from this page.",
-    "What I want next sits between the two. Most of the AI work I find genuinely interesting has a finance problem somewhere underneath it. Right now I'm learning FastAPI, MCP and system design, and I still check the markets most mornings.",
+    "I'm Chinmay Shastry, an AI engineer in Bengaluru. Before this I ran my own financial practice for about five years — portfolio management for a client list that passed fifty, an AngelOne sub-brokership, ITR filing, and a Tata AIA insurance agency. Whatever the client needed, basically. A lot of it came down to sitting with someone until they were comfortable placing their own order and setting a stop loss, which is good training for explaining complicated things to people who are nervous.",
+    "In January 2025 I moved into technology. I don't think of it as leaving finance — I still think in it — I just wanted better tools for the problems I'd already spent five years on. It was early enough that AI wasn't the noise it is now, which in hindsight I'm glad about.",
+    "I did the DataMites AI engineering programme at their Marathahalli branch, then an eight-month internship at Rubixe from October 2025 to June 2026, building computer vision and NLP systems — including a sign-language recogniser that reached 99.87% accuracy across 24 gestures. After that my focus shifted to LLMs, then RAG, then agentic systems, which is where most of my own projects sit now. Three of them are live, and you can click straight through from this page.",
+    "Going from finance to a coding environment took me about a year and a half before it felt genuinely comfortable. That adjustment is the part I'd point to most — it's why I'm relaxed about whatever stack comes next. At the moment that's FastAPI, MCP and system design. I still check the markets most mornings.",
   ],
 
   // Quick facts / stats shown next to the bio
@@ -127,7 +131,7 @@ export const whyHireMe = {
   reasons: [
     {
       title: "I bring a domain most AI engineers don't have",
-      body: "Five years in equity and derivatives means nobody has to explain what a drawdown is, why a compliance document can't be loosely paraphrased, or what an analyst actually does all day. If your problem touches money, I've already lived in it.",
+      body: "Five years of managing real client money — portfolio management, a sub-brokership, an insurance agency — means nobody has to explain what a drawdown is, why a compliance document can't be loosely paraphrased, or what an analyst actually does all day. If your problem touches money, I've already lived in it.",
     },
     {
       title: "I've actually shipped things",
@@ -138,8 +142,8 @@ export const whyHireMe = {
       body: "I spent years telling clients why their portfolio moved, to people who were anxious and didn't speak the jargon. That turns out to be the same skill as explaining a model's output to whoever has to sign off on it.",
     },
     {
-      title: "I pick things up quickly",
-      body: "I came from a commerce degree and retrained into deployed LLM applications inside a year. At the moment I'm working through FastAPI, MCP and system design — ask me again in a few months.",
+      title: "I adapt, and I've already proved it once",
+      body: "I came into this from finance with no coding background. It took about a year and a half before a coding environment felt genuinely comfortable, and I've been building steadily since. At the moment I'm working through FastAPI, MCP and system design — ask me again in a few months.",
     },
   ],
 };
@@ -438,7 +442,7 @@ export const timeline = [
     period: "2019 — 2024",
     location: "Bengaluru, India",
     description:
-      "Ran an independent practice built around portfolio management — equity and derivatives for 50+ clients, using fundamental and technical analysis alongside options strategy. Also handled market consultation, taught clients the practical side of trading (placing orders, stop losses, targets), filed ITRs, and advised on life insurance. Built Python and Excel workflows to screen positions and track downside risk.",
+      "Ran an independent practice built around portfolio management — equity and derivatives for 50+ clients, using fundamental and technical analysis alongside options strategy. Held an AngelOne sub-brokership and a Tata AIA insurance agency alongside it, and handled market consultation, ITR filing, and teaching clients the practical side of trading (placing orders, stop losses, targets). Built Python and Excel workflows to screen positions and track downside risk.",
   },
 ];
 

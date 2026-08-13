@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, LoaderCircle, CheckCircle2, AlertCircle } from "lucide-react";
+import { Send, LoaderCircle, CheckCircle2, AlertCircle, MapPin } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { contact, profile } from "@/data/content";
@@ -70,6 +70,30 @@ export default function Contact() {
             >
               {profile.email}
             </a>
+
+            {/* Repeated from the hero on purpose — location is often the
+                first thing a recruiter checks, and not everyone scrolls. */}
+            {profile.openToCities?.length > 0 && (
+              <>
+                <h3 className="mt-10 font-display text-xl font-semibold">
+                  Where I can work
+                </h3>
+                <p className="mt-2 inline-flex items-center gap-2 text-cocoa dark:text-latte">
+                  <MapPin
+                    size={17}
+                    className="shrink-0 text-terracotta dark:text-ember"
+                    aria-hidden="true"
+                  />
+                  Open to roles in{" "}
+                  {profile.openToCities.length > 1
+                    ? `${profile.openToCities
+                        .slice(0, -1)
+                        .join(", ")} and ${profile.openToCities.at(-1)}`
+                    : profile.openToCities[0]}
+                  .
+                </p>
+              </>
+            )}
 
             <h3 className="mt-10 font-display text-xl font-semibold">
               Elsewhere on the internet
