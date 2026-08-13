@@ -271,7 +271,6 @@ export const skillGroups = [
       "Git",
       "GitHub",
       "REST APIs",
-      "Docker",
       "AWS EC2 / SageMaker",
     ],
   },
@@ -303,6 +302,8 @@ export const learning = {
     "MCP (Model Context Protocol)",
     "Pydantic / Structured Outputs",
     "System Design",
+    "Docker",
+    "Kubernetes",
     "MLflow",
     "GitHub Actions",
   ],
@@ -488,7 +489,7 @@ export const contact = {
     },
     {
       label: "X / Twitter",
-      href: "https://x.com/yourhandle", // TODO: add your handle or delete this entry
+      href: "https://x.com/ChinmayShastry",
       icon: Twitter,
     },
     {

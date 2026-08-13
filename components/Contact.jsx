@@ -127,6 +127,25 @@ export default function Contact() {
               className="rounded-3xl border border-linen bg-cream p-7 shadow-soft sm:p-9 dark:border-bark dark:bg-night"
               aria-label="Contact form"
             >
+              {/* Formspree reads this to set the subject of the email it
+                  sends you, so messages don't all arrive titled the same. */}
+              <input
+                type="hidden"
+                name="_subject"
+                value="New message from your portfolio"
+              />
+              {/* Formspree honeypot: bots fill in every field they find,
+                  people never see this one. Anything submitted with it
+                  filled is discarded silently. */}
+              <input
+                type="text"
+                name="_gotcha"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
+
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label
