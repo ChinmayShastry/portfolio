@@ -470,11 +470,9 @@ export const contact = {
   blurb:
     "I'm looking for roles in AI engineering, data science and data analysis. If you're working on something where finance and AI overlap, I'd particularly like to hear about it.",
 
-  // TODO ─ REQUIRED for the form to work:
-  //  1. Create a free account at https://formspree.io
-  //  2. Create a new form and copy its ID (looks like "xkgwabcd")
-  //  3. Paste it here:
-  formspreeId: "",
+  // Formspree form ID — submissions arrive in your email inbox.
+  // Manage the form (or change the target address) at https://formspree.io
+  formspreeId: "xjybowdg",
 
   socials: [
     {
