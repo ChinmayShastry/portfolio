@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Star } from "lucide-react";
+import { ExternalLink, Github, Hammer, Star } from "lucide-react";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { projects, contact } from "@/data/content";
@@ -56,6 +56,12 @@ export default function Projects() {
                       Featured
                     </span>
                   )}
+                  {project.status && (
+                    <span className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-cream/90 px-3 py-1 text-xs font-semibold text-brown shadow-soft backdrop-blur-sm dark:bg-night/90 dark:text-honey">
+                      <Hammer size={12} aria-hidden="true" />
+                      {project.status}
+                    </span>
+                  )}
                 </div>
 
                 <div className="flex flex-1 flex-col p-6">
@@ -78,7 +84,14 @@ export default function Projects() {
                     ))}
                   </ul>
 
-                  {/* Links — hidden automatically when the URL is "" */}
+                  {/* Links — hidden automatically when the URL is "".
+                      A project with neither would otherwise render an empty
+                      bar, so unreleased work gets a short note instead. */}
+                  {!project.liveUrl && !project.sourceUrl ? (
+                    <p className="mt-5 border-t border-linen pt-4 text-sm text-cocoa/75 dark:border-bark dark:text-latte/75">
+                      Code and write-up to follow once it&apos;s stable.
+                    </p>
+                  ) : (
                   <div className="mt-5 flex items-center gap-4 border-t border-linen pt-4 dark:border-bark">
                     {project.liveUrl && (
                       <a
@@ -105,6 +118,7 @@ export default function Projects() {
                       </a>
                     )}
                   </div>
+                  )}
                 </div>
               </motion.article>
             </Reveal>

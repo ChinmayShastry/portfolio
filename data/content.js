@@ -105,8 +105,9 @@ export const about = {
   bio: [
     "I'm Chinmay Shastry, an AI engineer in Bengaluru. Before this I ran my own financial practice for about five years — portfolio management for a client list that passed fifty, an AngelOne sub-brokership, ITR filing, and a Tata AIA insurance agency. Whatever the client needed, basically. A lot of it came down to sitting with someone until they were comfortable placing their own order and setting a stop loss, which is good training for explaining complicated things to people who are nervous.",
     "In January 2025 I moved into technology. I don't think of it as leaving finance — I still think in it — I just wanted better tools for the problems I'd already spent five years on. It was early enough that AI wasn't the noise it is now, which in hindsight I'm glad about.",
-    "I did the DataMites AI engineering programme at their Marathahalli branch, then an eight-month internship at Rubixe from October 2025 to June 2026, building computer vision and NLP systems — including a sign-language recogniser that reached 99.87% accuracy across 24 gestures. After that my focus shifted to LLMs, then RAG, then agentic systems, which is where most of my own projects sit now. Three of them are live, and you can click straight through from this page.",
-    "Going from finance to a coding environment took me about a year and a half before it felt genuinely comfortable. That adjustment is the part I'd point to most — it's why I'm relaxed about whatever stack comes next. At the moment that's FastAPI, MCP and system design. I still check the markets most mornings.",
+    "I did the DataMites AI engineering programme at their Marathahalli branch, then an eight-month internship at Rubixe from October 2025 to June 2026, building computer vision and NLP systems — including a sign-language recogniser that reached 99.87% accuracy across 24 gestures. From there I worked forward through transformers into LLMs, RAG, and now agentic systems, which is where most of my own projects sit. Three are live and you can click through from this page.",
+    "None of it came easily at first. Coming from finance, the coding environment took about a year and a half before it felt genuinely comfortable, and the concepts underneath it — machine learning, deep learning, transformers, retrieval, agents — took real work to get straight.",
+    "What I got from that stretch is a realistic sense of what learning something hard actually costs, and I've kept paying it. Right now I'm building agentic AI applications while working through MCP, FastAPI, Flask, Docker and Kubernetes — the bigger build is a multi-agent, multi-layer trading bot, which puts finance and AI in the same project. I still check the markets most mornings.",
   ],
 
   // Quick facts / stats shown next to the bio
@@ -142,7 +143,7 @@ export const whyHireMe = {
     },
     {
       title: "I adapt, and I've already proved it once",
-      body: "I came into this from finance with no coding background. It took about a year and a half before a coding environment felt genuinely comfortable, and I've been building steadily since. At the moment I'm working through FastAPI, MCP and system design — ask me again in a few months.",
+      body: "I came into this from finance with no coding background and no CS degree, and I'm now shipping AI systems. So when a stack has something I haven't used, it's a ramp-up I've done before. Right now that's MCP, FastAPI, Docker and Kubernetes, in my own time.",
     },
   ],
 };
@@ -336,6 +337,19 @@ export const projects = [
     tags: ["LLM", "Finance", "Tool Calling", "GPT-4o-mini", "Streamlit"],
     liveUrl: "https://stoxai-market.streamlit.app/",
     sourceUrl: "https://github.com/ChinmayShastry/StoxAI",
+  },
+  {
+    // `status` renders an "in progress" badge instead of the Featured one.
+    // Remove it and add liveUrl/sourceUrl once the repo is public.
+    status: "In progress",
+    title: "Multi-Agent Trading System",
+    description:
+      "A layered multi-agent system for market analysis — separate agents handling market data, signal generation, risk checks and execution logic, coordinated rather than run as one monolith. This is the build where the finance background and the agentic AI work meet.",
+    image: "/images/projects/trading-bot.svg",
+    alt: "Multi-agent trading system project preview",
+    tags: ["Agentic AI", "Multi-Agent", "Finance", "Python"],
+    liveUrl: "",
+    sourceUrl: "",
   },
   {
     title: "AI Résumé Analyzer",
