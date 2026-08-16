@@ -328,58 +328,64 @@ export const projects = [
   },
   {
     featured: true,
-    title: "AI Finance Research Assistant",
+    title: "StoxAI — Indian Market Research",
     description:
-      "LLM-powered research tool covering Nifty 250 equities and commodities. Live Yahoo Finance and NewsAPI pipelines feed GPT-4o-mini modules for sentiment analysis and long-form research, surfaced through interactive Plotly dashboards.",
+      "Research assistant for Nifty 250 stocks, commodities and indices. Pulls live price data and financial news, runs LLM sentiment analysis across it, and answers follow-up questions through a tool-calling chatbot that can compare assets in plain English. Built as a research companion, so it surfaces catalysts and risks and leaves the call to the investor.",
     image: "/images/projects/finance-assistant.svg",
-    alt: "AI Finance Research Assistant project preview",
-    tags: ["LLM", "Finance", "Streamlit", "Plotly", "NewsAPI"],
-    liveUrl: "https://ai-finance-research-assistant.streamlit.app/",
-    sourceUrl: "https://github.com/ChinmayShastry/ai-finance-research-assistant",
+    alt: "StoxAI Indian market research assistant preview",
+    tags: ["LLM", "Finance", "Tool Calling", "GPT-4o-mini", "Streamlit"],
+    liveUrl: "https://stoxai-market.streamlit.app/",
+    sourceUrl: "https://github.com/ChinmayShastry/StoxAI",
   },
   {
-    title: "LLM-Powered Resume Analyzer",
+    title: "AI Résumé Analyzer",
     description:
-      "Agentic evaluation system with autonomous multi-step reasoning (parse → extract → analyse → output), producing structured, role-specific skill-gap analysis and candidate recommendations through a live scoring dashboard.",
+      "ATS-style résumé scoring with skill-gap analysis powered by sentence-transformers, plus AI rewriting suggestions. Multi-step reasoning (parse → extract → analyse → output) produces role-specific feedback through a live scoring dashboard.",
     image: "/images/projects/resume-analyzer.svg",
-    alt: "LLM-powered resume analyzer project preview",
-    tags: ["Agentic AI", "LLM", "NLP", "Streamlit"],
+    alt: "AI résumé analyzer project preview",
+    tags: ["NLP", "Sentence Transformers", "ATS", "Agentic AI", "Streamlit"],
     liveUrl: "https://resume-aianalyzer.streamlit.app/",
     sourceUrl: "https://github.com/ChinmayShastry/ai-resume-analyzer",
   },
   {
-    title: "Enterprise RAG System",
+    title: "DocuMind — Enterprise RAG",
     description:
-      "Modular, production-oriented RAG pipeline with RBAC-enforced document access, rotating query logs, LRU caching, and Tenacity retry logic — plus a feedback dashboard for continuous quality monitoring. The governance design mirrors regulated environments.",
+      "A RAG assistant built for documents where a wrong answer has consequences: product manuals and HR/compliance policy. Answers are drawn only from the source documents and cite the exact page, role-based access controls what each user can retrieve, and every query is logged for audit.",
     image: "/images/projects/enterprise-rag.svg",
-    alt: "Enterprise RAG system project preview",
-    tags: ["RAG", "RBAC", "Production", "Monitoring"],
+    alt: "DocuMind enterprise RAG system preview",
+    tags: ["RAG", "RBAC", "ChromaDB", "Audit Trail", "OpenAI"],
     liveUrl: "",
-    // TODO: no public repo found for this one — push it to GitHub and
-    // replace this with the exact repo URL
-    sourceUrl: "https://github.com/ChinmayShastry",
+    sourceUrl: "https://github.com/ChinmayShastry/enterprise-rag-system",
   },
   {
-    title: "Computer Vision & Deep Learning",
+    title: "Pneumonia Detection from X-Rays",
     description:
-      "Three production-style vision systems: a 4-block CNN for pneumonia detection with VGG16/ResNet50 transfer learning and Grad-CAM interpretability, Indian Sign Language recognition across 24 gestures at 99.87% accuracy, and a 43-class traffic-sign classifier.",
+      "Chest X-ray classification comparing a from-scratch CNN against VGG16 and ResNet50 transfer learning. ResNet50 came out best at 88% accuracy and 0.95 AUC. The more useful finding was that the scratch CNN's apparently perfect 1.00 sensitivity came from flagging almost every image positive, at 0.00 specificity — which is why the models are scored on sensitivity and specificity separately rather than accuracy alone.",
     image: "/images/projects/computer-vision.svg",
-    alt: "Computer vision and deep learning portfolio preview",
-    tags: ["CNN", "Transfer Learning", "Grad-CAM", "TensorFlow"],
+    alt: "Pneumonia detection from chest X-rays project preview",
+    tags: ["TensorFlow", "Transfer Learning", "ResNet50", "Medical Imaging"],
     liveUrl: "",
-    // TODO: push these to GitHub and link the repo here
-    sourceUrl: "https://github.com/ChinmayShastry",
+    sourceUrl: "https://github.com/ChinmayShastry/pneumonia-classification",
   },
   {
-    title: "Predictive Modeling & Forecasting",
+    title: "Machine Learning From Scratch",
     description:
-      "Telecom churn prediction on a 243K-customer dataset using XGBoost and SHAP, quantifying cost-benefit trade-offs to drive retention strategy — alongside a custom OLS-estimated SARIMA model with full ADF/ACF/PACF diagnostics for recursive forecasting.",
-    image: "/images/projects/predictive-modeling.svg",
-    alt: "Predictive modeling and forecasting project preview",
-    tags: ["XGBoost", "SHAP", "SARIMA", "Time Series"],
+      "K-Nearest Neighbours and linear regression implemented from first principles in NumPy — gradient descent, loss tracking and feature scaling written by hand, then benchmarked against scikit-learn to confirm the implementations were correct. Built to understand the mechanics underneath the libraries.",
+    image: "/images/projects/ml-from-scratch.svg",
+    alt: "Machine learning from scratch project preview",
+    tags: ["NumPy", "Gradient Descent", "scikit-learn", "Fundamentals"],
     liveUrl: "",
-    // TODO: push these to GitHub and link the repo here
-    sourceUrl: "https://github.com/ChinmayShastry",
+    sourceUrl: "https://github.com/ChinmayShastry/knn-from-scratch",
+  },
+  {
+    title: "Classical ML & Analytics",
+    description:
+      "A run of applied machine-learning projects across business and NLP problems: customer transaction prediction, Portuguese bank marketing response, employee performance analysis, flight price prediction, fake-news detection and Twitter sentiment classification.",
+    image: "/images/projects/predictive-modeling.svg",
+    alt: "Classical machine learning and analytics projects preview",
+    tags: ["XGBoost", "Classification", "EDA", "NLP", "Pandas"],
+    liveUrl: "",
+    sourceUrl: "https://github.com/ChinmayShastry?tab=repositories",
   },
 ];
 

@@ -25,7 +25,7 @@ export default function Projects() {
         <SectionHeading
           eyebrow="Projects"
           title="Selected work"
-          description="Six projects across RAG, agentic tools and deep learning. Three are live — the demo and code links are on each card."
+          description="GenAI and RAG systems, deep learning, and the fundamentals underneath. Three have live demos — demo and code links are on each card."
         />
 
         <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
