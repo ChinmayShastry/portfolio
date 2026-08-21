@@ -33,9 +33,9 @@ export const siteMeta = {
   description:
     "AI/GenAI Engineer in Bengaluru building hybrid RAG pipelines, agentic LLM workflows, and deep-learning systems — with five years in financial markets behind the technical decisions.",
   url: "https://chinmayshastryportfolio.vercel.app",
-  // TODO: drop a 1200×630 PNG/JPG at public/images/og.png and set this
-  // to "/images/og.png" for rich link previews on LinkedIn / X.
-  ogImage: "",
+  // 1200×630 preview card shown when the site is shared on LinkedIn,
+  // X, WhatsApp etc. Regenerate it if the name or tagline changes.
+  ogImage: "/images/og.png",
   keywords: [
     "AI Engineer",
     "GenAI Engineer",

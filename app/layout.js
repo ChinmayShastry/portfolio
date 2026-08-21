@@ -34,12 +34,26 @@ export const metadata = {
     siteName: siteMeta.title,
     locale: "en_US",
     type: "website",
-    ...(siteMeta.ogImage ? { images: [{ url: siteMeta.ogImage }] } : {}),
+    // Dimensions matter: without them some platforms fall back to a
+    // small thumbnail instead of the full-width card.
+    ...(siteMeta.ogImage
+      ? {
+          images: [
+            {
+              url: siteMeta.ogImage,
+              width: 1200,
+              height: 630,
+              alt: `${profile.name} — ${profile.roles[0]}`,
+            },
+          ],
+        }
+      : {}),
   },
   twitter: {
     card: "summary_large_image",
     title: siteMeta.title,
     description: siteMeta.description,
+    ...(siteMeta.ogImage ? { images: [siteMeta.ogImage] } : {}),
   },
   robots: {
     index: true,
