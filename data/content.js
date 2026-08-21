@@ -318,17 +318,6 @@ export const learning = {
 export const projects = [
   {
     featured: true,
-    title: "DocChat AI — Hybrid RAG",
-    description:
-      "Document intelligence combining BM25 keyword retrieval, dense semantic search, and CrossEncoder reranking — lifting RAGAS context precision from ~78% to 100% on the evaluation set. Multi-document support with token-level streaming.",
-    image: "/images/projects/docchat.svg",
-    alt: "DocChat AI hybrid RAG project preview",
-    tags: ["RAG", "LangChain", "FAISS", "BM25", "Reranking"],
-    liveUrl: "https://docchat-ai.streamlit.app",
-    sourceUrl: "https://github.com/ChinmayShastry/docchat-ai",
-  },
-  {
-    featured: true,
     title: "StoxAI — Indian Market Research",
     description:
       "Research assistant for Nifty 250 stocks, commodities and indices. Pulls live price data and financial news, runs LLM sentiment analysis across it, and answers follow-up questions through a tool-calling chatbot that can compare assets in plain English. Built as a research companion, so it surfaces catalysts and risks and leaves the call to the investor.",
@@ -337,6 +326,27 @@ export const projects = [
     tags: ["LLM", "Finance", "Tool Calling", "GPT-4o-mini", "Streamlit"],
     liveUrl: "https://stoxai-market.streamlit.app/",
     sourceUrl: "https://github.com/ChinmayShastry/StoxAI",
+  },
+  {
+    featured: true,
+    title: "RAG Atlas — Interactive RAG Explainer",
+    description:
+      "A walkthrough of six RAG architectures — naive, advanced, agentic, multi-hop, graph and hierarchical — run against the same corpus and question so the architecture is the only thing that changes. Nothing is simulated: real chunking, 1536-dimension embeddings, cosine ranking, a cross-encoder, streamed generation, and a second model grading the first.",
+    image: "/images/projects/rag-atlas.svg",
+    alt: "RAG Atlas interactive RAG explainer preview",
+    tags: ["RAG", "Architectures", "Evaluation", "Guardrails", "Embeddings"],
+    liveUrl: "https://rag-atlas-learn.vercel.app",
+    sourceUrl: "https://github.com/ChinmayShastry/rag-atlas",
+  },
+  {
+    title: "DocChat AI — Hybrid RAG",
+    description:
+      "Document intelligence combining BM25 keyword retrieval, dense semantic search, and CrossEncoder reranking — lifting RAGAS context precision from ~78% to 100% on the evaluation set. Multi-document support with token-level streaming.",
+    image: "/images/projects/docchat.svg",
+    alt: "DocChat AI hybrid RAG project preview",
+    tags: ["RAG", "LangChain", "FAISS", "BM25", "Reranking"],
+    liveUrl: "https://docchat-ai.streamlit.app",
+    sourceUrl: "https://github.com/ChinmayShastry/docchat-ai",
   },
   {
     // `status` renders an "in progress" badge instead of the Featured one.
@@ -465,6 +475,24 @@ export const timeline = [
       "Ran an independent practice built around portfolio management — equity and derivatives for 50+ clients, using fundamental and technical analysis alongside options strategy. Held an AngelOne sub-brokership and a Tata AIA insurance agency alongside it, and handled market consultation, ITR filing, and teaching clients the practical side of trading (placing orders, stop losses, targets). Built Python and Excel workflows to screen positions and track downside risk.",
   },
 ];
+
+/* ────────────────────────────────────────────────
+ *  Beyond Work — the music section.
+ *  Set `beyondWork = null` to hide the section entirely.
+ * ──────────────────────────────────────────────── */
+export const beyondWork = {
+  eyebrow: "Beyond Work",
+  title: "Twelve years of Hindustani classical",
+  paragraphs: [
+    "I've been learning Hindustani classical vocal for twelve years, with the same Guruji throughout, and I'm still learning — it isn't the kind of thing that finishes.",
+    "For about two and a half years I taught it as well. A hundred-odd students came through, the youngest four years old and the oldest sixty-five. You learn quickly that the same idea needs a completely different explanation for each person.",
+  ],
+  stats: [
+    { value: "12", label: "Years learning" },
+    { value: "100+", label: "Students taught" },
+    { value: "4–65", label: "Age range taught" },
+  ],
+};
 
 /* ────────────────────────────────────────────────
  *  Testimonials — currently OFF
